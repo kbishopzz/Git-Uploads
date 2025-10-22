@@ -116,5 +116,4 @@ If you find this project helpful, please give it a ⭐️ star!
 
 **Version:** v1.0 - October 2025
 
-**Created for:** Web developers looking to improve SEO with structured data</content>
-<parameter name="filePath">/Users/student2/Documents/Git Uploads/README.md
+**Created for:** Web developers looking to improve SEO with structured data
