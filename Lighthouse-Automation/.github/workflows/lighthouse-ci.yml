@@ -1,0 +1,71 @@
+name: 🚀 Lighthouse Performance Audit
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  NODE_VERSION: "20.x"
+
+jobs:
+  lighthouse_performance_audit:
+    name: 🚀 Lighthouse Performance Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Google Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Install Lighthouse
+        run: npm install -g lighthouse
+
+      - name: Start server
+        run: |
+          npm start &
+          echo $! > server.pid
+
+      - name: Wait for server
+        run: |
+          timeout 60 bash -c 'until curl -f http://localhost:3000/health; do sleep 2; done'
+          echo "✅ Server is ready for performance audit."
+
+      - name: Run Lighthouse Audits
+        run: |
+          mkdir -p lighthouse-reports
+          PAGES=("/powells-about.html" "/powells-flyer.html" "/powells-home.html" "/powells-recipes.html" "/powells-shop.html")
+          PAGE_NAMES=("powells-about" "powells-flyer" "powells-home" "powells-recipes" "powells-shop")
+          for i in "${!PAGES[@]}"; do
+            page="${PAGES[$i]}"
+            name="${PAGE_NAMES[$i]}"
+            url="http://localhost:3000${page}"
+            echo "🔦 Auditing $name page (Desktop)..."
+            lighthouse "$url" --output=html,json --output-path="lighthouse-reports/lighthouse-${name}-desktop" --chrome-flags="--no-sandbox --headless --disable-gpu" --preset=desktop --quiet
+            echo "📱 Auditing $name page (Mobile)..."
+            lighthouse "$url" --output=html,json --output-path="lighthouse-reports/lighthouse-${name}-mobile" --chrome-flags="--no-sandbox --headless --disable-gpu" --screenEmulation.mobile --quiet
+          done
+
+      - name: Upload Lighthouse reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: lighthouse-reports/
+          retention-days: 7
+
+      - name: Cleanup server
+        if: always()
+        run: kill $(cat server.pid)

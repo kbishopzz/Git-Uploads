@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sunny Bites Café - Healthy, Organic Meals and Beverages">
+    <title>Sunny Bites Café - Home</title>
+    <!-- Preload CSS to fetch early but avoid render-blocking. -->
+    <link rel="preload" href="/style.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="/response.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="/style.css">
+      <link rel="stylesheet" href="/response.css">
+    </noscript>
+  <!-- Loader utility (deferred so it doesn't block parsing) -->
+  <script src="js/loader.js" defer></script>
+  <!-- Bootstrap loader: moves inline bootstrap into an external, cacheable, CSP-friendly file -->
+  <script src="js/bootstrap-loader.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Sunny Bites Café",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Green Street",
+        "addressLocality": "Toronto",
+        "addressRegion": "ON",
+        "postalCode": "M5H 2N2",
+        "addressCountry": "CA"
+      },
+      "telephone": "+1-416-555-1234",
+      "url": "https://sunnybites.ca"
+    }
+    </script>
+  </head>
+
+  <body>
+
+    <!-- Navigation Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <h1>☀️ Sunny Bites Café</h1>
+          </div>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link active">Home</a></li>
+              <li><a href="menu.html" class="nav-link">Menu</a></li>
+              <li><a href="order.html" class="nav-link">Order Online</a>
+              </li>
+            </ul>
+          </nav>
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+
+          <!-- Hero Section -->
+          <section class="hero">
+            <div class="hero-content">
+              <h2>Sunny Bites Café</h2>
+              <p>Where taste meets healthy!</p>
+              <div class="hero-buttons">
+                <a href="menu.html" class="btn btn-primary">Explore Menu</a>
+                <a href="order.html" class="btn btn-secondary">Order Now</a>
+              </div>
+            </div>
+            <div class="hero-image">
+              <img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=600&h=400&fit=crop" alt="Cozy café interior">
+            </div>
+          </section>
+
+          <!-- About Section -->
+          <section class="about" id="about">
+            <div class="about-content">
+              <!-- Top Row: Specials Carousel -->
+              <div class="specials-carousel">
+                <h2>Today's Favorites - Made Fresh for YOU!</h2>
+                <div class="carousel-container" id="specialsCarousel">
+                  <!-- Specials will be dynamically inserted here -->
+                </div>
+                <div class="carousel-dots" id="specialsCarouselDots">
+                  <!-- Dots will be dynamically inserted here -->
+                </div>
+                <button class="carousel-btn prev" id="specialsPrevBtn">❮</button>
+                <button class="carousel-btn next" id="specialsNextBtn">❯</button>
+              </div>
+
+              <!-- Bottom Row: About Us & Info Cards -->
+              <div class="about-bottom">
+                <div class="about-text">
+                  <h2>Welcome to Sunny Bites Café,</h2>
+                  <p> We are a seasonal café, though unlike other restaurants, we are a seasonal café with a twist -- We are open all year round! We work hard to make our space and our menu change with the seasons, and take pride in being able to offer you a new experience as the year cycles on. <br><br>
+
+                  Spring is our traditional café lineup, serving up an entire range of season inspired goodies that help you bounce back to life after the winter.<br><br>  
+
+                  Summer is when we break out those cool vibes… tea or coffee?  Sure.. but we start our very cool blends of those drinks.  We guarantee you’ll have more fun in the sun that you bargained for. <br><br>
+
+                  Fall, beautiful colors, cooling temps, we introduce more warm beverages and treats, keeping in-line with the whole good-times feel with Fall colors and our fan favorite. Pumpkin Spice. <br><br>
+
+                  Ah, Winter. Cold. Night, warm fires and snow covered peaks.  You’ll find our décor is so cozy, you’ll ask how much to rent the place. Hot coco with whipped cream piled so high you could go skiing, warm treats, and hotter food to make even your bones forget they were cold. <br><br>
+
+                  Come by to the Sunny Bites Café, any time of the year.  You’ll be glad you did.</p>
+         
+                </div>
+                <div class="about-info">
+                  <div class="info-card">
+                    <h3>📍 Location</h3>
+                    <p>123 Green Street, Toronto, ON M5H 2N2</p>
+                  </div>
+                  <div class="info-card">
+                    <h3>⏰ Hours</h3>
+                    <p>
+                      Mon-Fri: 7:00 AM - 6:00 PM<br>Sat-Sun: 8:00 AM - 7:00 PM
+                    </p>
+                  </div>
+                  <div class="info-card">
+                    <h3>📞 Contact</h3>
+                    <p>(416) 555-1234<br>hello@sunnybites.ca</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Reviews/Testimonials Carousel Section -->
+          <section class="reviews" id="reviews">
+            <h2>What Our Customers Say</h2>
+            <div class="carousel">
+              <div class="carousel-container">
+                <div class="carousel-content" id="carouselContent">
+                  <!-- Reviews will be dynamically inserted here -->
+                </div>
+              </div>
+              <button class="carousel-btn prev" id="prevBtn">❮</button>
+              <button class="carousel-btn next" id="nextBtn">❯</button>
+            </div>
+            <div class="carousel-dots" id="carouselDots">
+              <!-- Dots will be dynamically inserted here -->
+            </div>
+          </section>
+
+          <!-- Call to Action Section -->
+          <section class="cta">
+            <h2>Ready to Taste the Difference?</h2>
+            <p>Browse our menu and place your order online today!</p>
+            <a href="order.html" class="btn btn-primary btn-large"
+              >Start Your Order</a
+            >
+          </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Sunny Bites Café</h3>
+            <p>Healthy, organic meals for the whole family.</p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="menu.html">Menu</a></li>
+              <li><a href="order.html">Order</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook">f</a>
+              <a href="#" aria-label="Instagram">📷</a>
+              <a href="#" aria-label="Twitter">𝕏</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Keyin College SD25 - Semester 2 - Midterm Sprint Project. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Notification Alert -->
+    <div id="alertBox" class="alert-box"></div>
+
+    <!-- bootstrap-loader.js takes care of loading and initialization -->
+  </body>
+</html>

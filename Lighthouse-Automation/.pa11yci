@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "timeout": 30000,
+    "wait": 1000,
+    "chromeLaunchConfig": {
+      "args": [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-gpu"
+      ]
+    },
+    "standard": "WCAG2AA",
+    "level": "error",
+    "reporters": [
+      "cli",
+      "json"
+    ],
+    "ignore": [],
+    "includeNotices": false,
+    "includeWarnings": true,
+    "rootElement": "body"
+  },
+  "urls": [
+    "http://localhost:3000",
+    "http://localhost:3000/about.html",
+    "http://localhost:3000/products.html",
+    "http://localhost:3000/contact.html"
+  ]
+}

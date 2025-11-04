@@ -1,0 +1,55 @@
+{
+  "name": "lighthouse-tailwind",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "./node_modules/.bin/tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "start": "node server.js",
+    "lighthouse": "./scripts/lighthouse-ci.sh",
+    "lighthouse:manual": "lighthouse http://localhost:3000 --output=html --output-path=lighthouse-report.html",
+    "accessibility": "npm run build && npm run start & sleep 5 && npx axe http://localhost:3000",
+    "audit": "npm run lighthouse && npm run accessibility",
+    "performance": "npm run build && npm run start & sleep 5 && lighthouse http://localhost:3000 --only-categories=performance",
+    "security": "./scripts/security-audit.sh",
+    "security:audit": "npm audit --audit-level=moderate",
+    "security:fix": "npm audit fix",
+    "update-deps": "npm update && npm audit fix",
+    "update-ci-pages": "node update-ci-pages.js"
+  },
+  "keywords": [
+    "tailwind",
+    "lighthouse",
+    "accessibility",
+    "performance",
+    "ci-cd"
+  ],
+  "author": "",
+  "license": "MIT",
+  "description": "Educational Tailwind CSS project with automated Lighthouse CI and accessibility testing",
+  "dependencies": {
+    "@headlessui/react": "^2.2.9",
+    "@heroicons/react": "^2.2.0",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@axe-core/cli": "^4.10.2",
+    "@tailwindcss/cli": "^4.1.14",
+    "autoprefixer": "^10.4.21",
+    "lighthouse": "^12.8.2",
+    "pa11y-ci": "^4.0.1",
+    "postcss": "^8.5.6",
+    "puppeteer": "^24.24.1",
+    "tailwindcss": "^4.1.14"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=8.0.0"
+  },
+  "overrides": {
+    "ws": "^8.18.0",
+    "tmp": "^0.2.4",
+    "tar-fs": "^3.0.4"
+  }
+}
