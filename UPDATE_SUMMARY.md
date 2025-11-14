@@ -2,7 +2,7 @@
 
 **Date:** November 14, 2025  
 **Repository:** Git-Uploads  
-**Version:** 1.0.4 (Toolkit) / 1.1.1 (Media Updater)  
+**Version:** 1.0.5 (Toolkit) / 1.1.1 (Media Updater) / 1.0.3 (JSON-LD)  
 **Updated by:** AI Assistant
 
 ---
@@ -161,6 +161,16 @@ All requested improvements have been successfully implemented:
 - **Documentation Updates**: All references updated across 9+ files
 - **Code Quality**: Improved naming conventions for clarity and consistency
 
+### 18. ✅ Added Review Schema to JSON-LD Tool (v1.0.3)
+- **New Schema Type**: Review schema for customer reviews and ratings
+- **Features**: Support for reviewing any item type (businesses, products, etc.)
+- **Rating System**: Configurable rating scale (best/worst rating values)
+- **Author Data**: Author and publisher information for reviews
+- **Timestamps**: Date published tracking for review timestamps
+- **Rich Results**: Compatible with Google Review rich snippets
+- **Version Updates**: JSON-LD tool to 1.0.3, Toolkit to 1.0.5
+- **Documentation**: Updated README, CHANGELOG, and root documentation
+
 ---
 
 ## 📊 Files Created/Modified
@@ -231,16 +241,17 @@ All requested improvements have been successfully implemented:
 - **Root README:** No
 - **Lines of Documentation:** ~8,000
 
-### After Update (v1.1.1)
+### After Update (v1.0.5)
 - **Total Tools:** 4 (added Auto Media Updater with multi-provider)
 - **Total Documentation Files:** 24+ (+50%)
 - **Example Config Files:** 26+ 
 - **LICENSE Files:** 4 (all projects)
-- **CHANGELOG Files:** 3 (all projects)
-- **Root README:** Yes (comprehensive, updated for v1.1.1)
-- **Lines of Documentation:** ~14,000+ (+75%)
-- **Lines of Code:** ~4,500+ (+28%)
+- **CHANGELOG Files:** 4 (all projects)
+- **Root README:** Yes (comprehensive, updated for v1.0.5)
+- **Lines of Documentation:** ~14,500+ (+75%)
+- **Lines of Code:** ~4,700+ (+30%)
 - **Supported Media Providers:** 3 (Unsplash, Pixabay, Envato)
+- **Supported JSON-LD Schemas:** 8 (Restaurant, Product, Event, LocalBusiness, Organization, Article, Menu, Review)
 - **Web Interfaces:** 2 (Lighthouse + Auto Media Updater)
 - **File Structure:** Cleaner naming (update-media.mjs, media-providers.mjs)
 
@@ -409,9 +420,9 @@ This repository now demonstrates:
 ### Quick Links
 - Repository: https://github.com/kbishopzz/Git-Uploads
 - License: MIT (see LICENSE files)
-- Version: 1.0.4 (Toolkit) / 1.1.1 (Media Updater)
+- Version: 1.0.5 (Toolkit) / 1.1.1 (Media Updater) / 1.0.3 (JSON-LD)
 - Last Updated: November 14, 2025
-- Tools: Async Loader, JSON-LD, Auto Media Updater (Multi-Provider), Lighthouse Automation
+- Tools: Async Loader, JSON-LD (8 schemas), Auto Media Updater (Multi-Provider), Lighthouse Automation
 
 ---
 
@@ -449,12 +460,12 @@ All requested updates have been completed successfully. The repository now inclu
 - 🚀 Improved CLI with arguments
 - 🔒 Flexible API key management
 
-The toolkit is now production-ready and can be deployed to client sites or shared publicly. The Auto Media Updater now features cleaner code architecture with intuitive file and function naming.
+The toolkit is now production-ready and can be deployed to client sites or shared publicly. The Auto Media Updater now features cleaner code architecture with intuitive file and function naming. The JSON-LD tool now supports 8 schema types including the new Review schema.
 
 ---
 
 **Update completed:** November 14, 2025  
-**Time invested:** ~5 hours of systematic improvements  
-**Result:** Professional, client-ready web automation toolkit with 4 tools, multi-provider media support, and clean code architecture
+**Time invested:** ~5.5 hours of systematic improvements  
+**Result:** Professional, client-ready web automation toolkit with 4 tools, multi-provider media support, 8 JSON-LD schemas, and clean code architecture
 
 🎉 **Ready to share with the world!**

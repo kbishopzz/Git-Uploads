@@ -254,8 +254,8 @@ Git-Uploads/
 ├── LICENSE
 │
 ├── Async-Boot-Loader-Template/
-│   ├── BOOTSTRAP_LOADER_README.md
-│   ├── LOADER_SETUP.md
+│   ├── README.md
+│   ├── SETUP.md
 │   ├── CHANGELOG.md
 │   ├── LICENSE
 │   ├── bootstrap-loader.js
