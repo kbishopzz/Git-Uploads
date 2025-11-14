@@ -1,5 +1,9 @@
 # 📝 Configuration Templates
 
+**Version:** 1.0.1  
+**Last Updated:** November 14, 2025  
+**License:** MIT
+
 Ready-to-use configuration files for common scenarios.
 
 ## Table of Contents

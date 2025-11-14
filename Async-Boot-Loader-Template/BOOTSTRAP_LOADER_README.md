@@ -1,7 +1,7 @@
 # 🔄 Bootstrap Loader — Quick Usage Guide
 
-**Version:** 1.0.0  
-**Last Updated:** November 4, 2025  
+**Version:** 1.0.1  
+**Last Updated:** November 14, 2025  
 **License:** MIT
 
 This repository includes two small files intended to be reusable across projects:

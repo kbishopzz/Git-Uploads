@@ -1,4 +1,8 @@
-# 🔧 Troubleshooting Guide - Lighthouse Automation
+# 🔧 Troubleshooting Guide
+
+**Version:** 1.0.1  
+**Last Updated:** November 14, 2025  
+**License:** MIT - Lighthouse Automation
 
 Common issues and their solutions when using the Lighthouse Automation package.
 

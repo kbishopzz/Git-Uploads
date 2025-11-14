@@ -1,5 +1,9 @@
 # Dynamic JSON-LD Schema Generator Module
 
+**Version:** 1.0.1  
+**Last Updated:** November 14, 2025  
+**License:** MIT
+
 A flexible, reusable JavaScript module for automatically generating and injecting JSON-LD structured data into websites. Perfect for improving SEO and enabling rich results in search engines.
 
 ## Features

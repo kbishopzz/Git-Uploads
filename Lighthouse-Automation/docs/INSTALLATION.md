@@ -1,5 +1,9 @@
 # 📦 Installation Guide - Lighthouse Automation
 
+**Version:** 1.0.1  
+**Last Updated:** November 14, 2025  
+**License:** MIT
+
 This guide will walk you through installing the Lighthouse Automation package into your existing web project.
 
 ## 📋 Prerequisites

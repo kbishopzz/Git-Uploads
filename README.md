@@ -3,14 +3,14 @@
 A comprehensive collection of production-ready tools for web performance optimization, SEO automation, and CI/CD integration. Perfect for developers, agencies, and teams looking to improve website quality and automate testing workflows.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)]()
-[![Last Updated](https://img.shields.io/badge/updated-November%202025-orange.svg)]()
+[![Version](https://img.shields.io/badge/version-1.0.1-green.svg)]()
+[![Last Updated](https://img.shields.io/badge/updated-November%2014%2C%202025-orange.svg)]()
 
 ---
 
 ## 📦 What's Included
 
-This repository contains three powerful, standalone tools that can be used independently or together:
+This repository contains four powerful, standalone tools that can be used independently or together:
 
 ### 1. 🔄 [Async Boot Loader Template](Async-Boot-Loader-Template/)
 
@@ -67,7 +67,35 @@ cd "JSON-LD Automation"/
 
 ---
 
-### 3. 🔦 [Lighthouse Automation CI/CD](Lighthouse-Automation/)
+### 3. 🖼️ [Auto Image Updater Template](Auto-Image-Updater-Template/)
+
+Automatically populate your projects with high-quality images from Unsplash API.
+
+**Key Features:**
+- 🔍 Automatic image search based on item names
+- 🎨 High-quality, professional images from Unsplash
+- 📝 Preserves data structure while updating images
+- 🚀 Simple command-line execution
+- 🔒 Secure with environment variables
+- 🎯 Customizable for any data structure
+
+**Use Cases:**
+- Quickly populate menu items with food images
+- Add product images to e-commerce catalogs
+- Generate placeholder images for development
+- Perfect for prototyping and demos
+
+**Quick Start:**
+```bash
+cd Auto-Image-Updater-Template/
+npm install
+# Create .env file with your Unsplash API key
+node update-menu-images.mjs
+```
+
+---
+
+### 4. 🔦 [Lighthouse Automation CI/CD](Lighthouse-Automation/)
 
 Complete CI/CD automation package for Google Lighthouse performance and accessibility testing.
 
@@ -98,18 +126,21 @@ npm install
 ## 🎯 Use Cases
 
 ### For Web Developers
+- ✅ Quickly populate projects with quality images
 - ✅ Speed up page load times with async loader
 - ✅ Improve SEO with structured data
 - ✅ Automate performance testing
 - ✅ Catch regressions before deployment
 
 ### For Agencies
+- ✅ Rapid prototyping with auto-generated images
 - ✅ Deliver high-performance client sites
 - ✅ Provide automated quality reports
 - ✅ Ensure accessibility compliance
 - ✅ Reduce manual testing time
 
 ### For Teams
+- ✅ Streamline content creation workflow
 - ✅ Enforce performance standards
 - ✅ Track metrics over time
 - ✅ Prevent performance regressions
@@ -158,6 +189,14 @@ cd "JSON-LD Automation"/
 open DYNAMIC-JSONLD-GUIDE.md
 ```
 
+**For Auto Image Updates:**
+```bash
+cd Auto-Image-Updater-Template/
+npm install
+# Setup .env file, then run:
+node update-menu-images.mjs
+```
+
 **For Performance Testing:**
 ```bash
 cd Lighthouse-Automation/
@@ -199,6 +238,14 @@ Git-Uploads/
 │   ├── LICENSE
 │   └── dynamic-jsonld-module.js
 │
+├── Auto-Image-Updater-Template/
+│   ├── README.md
+│   ├── update-menu-images.mjs
+│   ├── menu-data.js
+│   ├── package.json
+│   ├── .env.example
+│   └── .gitignore
+│
 └── Lighthouse-Automation/
     ├── README.md
     ├── DEPLOYMENT-CHECKLIST.md
@@ -230,14 +277,18 @@ Git-Uploads/
 ### Workflow 1: New Website Development
 
 ```bash
-# 1. Use Async Loader for fast page loads
+# 1. Populate content with images
+cd Auto-Image-Updater-Template/
+node update-menu-images.mjs
+
+# 2. Use Async Loader for fast page loads
 Copy loader.js and bootstrap-loader.js to project
 
-# 2. Add JSON-LD for SEO
+# 3. Add JSON-LD for SEO
 Copy dynamic-jsonld-module.js to project
 Configure schema types
 
-# 3. Set up Lighthouse CI for quality assurance
+# 4. Set up Lighthouse CI for quality assurance
 Copy Lighthouse-Automation/ contents
 Configure GitHub Actions
 Push to repository
@@ -439,11 +490,11 @@ See individual tool roadmaps for specific feature requests.
 
 ## 📈 Statistics
 
-**Total Tools:** 3  
-**Total Documentation Files:** 20+  
-**Lines of Code:** ~3,000  
-**Lines of Documentation:** ~10,000  
-**Configuration Examples:** 25+
+**Total Tools:** 4  
+**Total Documentation Files:** 21+  
+**Lines of Code:** ~3,500  
+**Lines of Documentation:** ~11,000  
+**Configuration Examples:** 26+
 
 ---
 
@@ -458,6 +509,12 @@ See individual tool roadmaps for specific feature requests.
 # JSON-LD Automation (no installation needed)
 # Just copy module to your project
 
+# Auto Image Updater
+cd Auto-Image-Updater-Template/
+npm install
+# Setup .env with Unsplash API key
+node update-menu-images.mjs
+
 # Lighthouse Automation
 cd Lighthouse-Automation/
 npm install
@@ -470,6 +527,7 @@ npm run lighthouse:manual
 - `Async-Boot-Loader-Template/loader.js` - Asset loader
 - `Async-Boot-Loader-Template/bootstrap-loader.js` - Bootstrap script
 - `JSON-LD Automation/dynamic-jsonld-module.js` - Schema generator
+- `Auto-Image-Updater-Template/update-menu-images.mjs` - Image updater script
 - `Lighthouse-Automation/server.js` - Web server
 - `Lighthouse-Automation/.lighthouserc.json` - Lighthouse config
 - `Lighthouse-Automation/scripts/lighthouse-ci.sh` - Testing script

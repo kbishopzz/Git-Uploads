@@ -1,5 +1,9 @@
 # 🚀 Quick Start Example
 
+**Version:** 1.0.1  
+**Last Updated:** November 14, 2025  
+**License:** MIT
+
 This example shows how to integrate Lighthouse Automation into a simple HTML/CSS/JS website.
 
 ## Sample Project Structure

@@ -1,5 +1,9 @@
 # 🚦 Usage Guide - Lighthouse Automation
 
+**Version:** 1.0.1  
+**Last Updated:** November 14, 2025  
+**License:** MIT
+
 Learn how to run Lighthouse audits locally and in CI, and how to interpret the results.
 
 ## 🏃 Running Tests Locally

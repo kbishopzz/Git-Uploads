@@ -1,4 +1,8 @@
-# ⚙️ Configuration Guide - Lighthouse Automation
+# ⚙️ Configuration Guide
+
+**Version:** 1.0.1  
+**Last Updated:** November 14, 2025  
+**License:** MIT - Lighthouse Automation
 
 This guide explains how to customize the Lighthouse Automation package for your specific needs.
 

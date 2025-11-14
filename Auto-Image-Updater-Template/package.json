@@ -1,0 +1,32 @@
+{
+  "name": "auto-image-updater-template",
+  "version": "1.0.0",
+  "description": "Automatically update your menu items (or any data) with beautiful images from Unsplash",
+  "main": "update-menu-images.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node update-menu-images.mjs",
+    "update": "node update-menu-images.mjs"
+  },
+  "keywords": [
+    "unsplash",
+    "images",
+    "automation",
+    "menu",
+    "web-development",
+    "toolkit"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kbishopzz/Git-Uploads"
+  }
+}

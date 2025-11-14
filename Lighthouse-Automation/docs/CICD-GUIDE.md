@@ -1,5 +1,9 @@
 # 🔄 CI/CD Implementation Guide
 
+**Version:** 1.0.1  
+**Last Updated:** November 14, 2025  
+**License:** MIT
+
 A comprehensive guide to understanding and implementing Lighthouse CI/CD automation with GitHub Actions.
 
 ## 📚 Table of Contents

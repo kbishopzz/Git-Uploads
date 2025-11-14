@@ -1,5 +1,9 @@
 # 📦 Lighthouse-Automation Package - Complete Summary
 
+**Version:** 1.0.1  
+**Last Updated:** November 14, 2025  
+**License:** MIT
+
 ## What Was Created
 
 This package contains everything needed to deploy Google Lighthouse CI automation to client projects.
