@@ -57,6 +57,7 @@ Dynamic JSON-LD structured data generator for improved SEO and rich search resul
 - Articles
 - Organization
 - Menu (for restaurants)
+- Review (customer reviews & ratings)
 
 **Quick Start:**
 ```bash
