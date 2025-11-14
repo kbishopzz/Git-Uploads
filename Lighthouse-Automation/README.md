@@ -1,6 +1,6 @@
 # 🚀 Lighthouse Automation - Reusable CI/CD Component
 
-**Version:** 1.0.1  
+**Version:** 1.0.2  
 **Last Updated:** November 14, 2025 that can be deployed to any web project for automated performance, accessibility, and best practices testing.
 
 ## 📦 What's Included

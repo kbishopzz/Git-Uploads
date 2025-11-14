@@ -1,6 +1,6 @@
 # 🏆 Lighthouse Best Practices
 
-**Version:** 1.0.1  
+**Version:** 1.0.2  
 **Last Updated:** November 14, 2025  
 **License:** MIT
 

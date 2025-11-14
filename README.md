@@ -3,7 +3,7 @@
 A comprehensive collection of production-ready tools for web performance optimization, SEO automation, and CI/CD integration. Perfect for developers, agencies, and teams looking to improve website quality and automate testing workflows.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.1-green.svg)]()
+[![Version](https://img.shields.io/badge/version-1.0.4-green.svg)]()
 [![Last Updated](https://img.shields.io/badge/updated-November%2014%2C%202025-orange.svg)]()
 
 ---
@@ -67,30 +67,48 @@ cd "JSON-LD Automation"/
 
 ---
 
-### 3. 🖼️ [Auto Image Updater Template](Auto-Image-Updater-Template/)
+### 3. 🎬 [Auto Media Updater Template](Auto-Media-Updater-Template/)
 
-Automatically populate your projects with high-quality images from Unsplash API.
+Multi-provider media automation tool for populating projects with high-quality images, videos, and audio.
 
 **Key Features:**
-- 🔍 Automatic image search based on item names
-- 🎨 High-quality, professional images from Unsplash
-- 📝 Preserves data structure while updating images
-- 🚀 Simple command-line execution
-- 🔒 Secure with environment variables
-- 🎯 Customizable for any data structure
+- 🎯 **Multi-Provider Support**: Unsplash, Pixabay, and Envato Elements
+- 🌐 **Web Interface**: Beautiful browser-based UI for easy configuration
+- 🖥️ **CLI Support**: Command-line interface for automation and scripting
+- 🔍 **Automatic media search** based on item names
+- 🎨 **High-quality**, professional images, videos, and audio from multiple sources
+- 📝 **Preserves data structure** while updating images
+- 🚀 **Simple execution** via web browser or command line
+- 🔒 **Secure** with environment variables or direct API key input
+- 📊 **Real-time progress** tracking and detailed logging
+- 🎯 **Flexible** - works with any JavaScript data structure
+
+**Supported Providers:**
+- **Unsplash**: Free HD photos (50-5000 req/hr)
+- **Pixabay**: Free stock media (5000-20000 req/hr)
+- **Envato Elements**: Premium content (subscription required)
 
 **Use Cases:**
-- Quickly populate menu items with food images
-- Add product images to e-commerce catalogs
-- Generate placeholder images for development
+- Quickly populate menu items with food images or videos
+- Add product media to e-commerce catalogs
+- Generate placeholder media for development
 - Perfect for prototyping and demos
+- Professional content for production sites
 
-**Quick Start:**
+**Quick Start (Web UI):**
 ```bash
 cd Auto-Image-Updater-Template/
 npm install
-# Create .env file with your Unsplash API key
-node update-menu-images.mjs
+npm run server
+# Open browser to http://localhost:3000
+```
+
+**Quick Start (CLI):**
+```bash
+cd Auto-Media-Updater-Template/
+npm install
+# Create .env file with your API key
+node update-media.mjs --provider pixabay
 ```
 
 ---
@@ -126,21 +144,27 @@ npm install
 ## 🎯 Use Cases
 
 ### For Web Developers
-- ✅ Quickly populate projects with quality images
+- ✅ Quickly populate projects with quality media from multiple sources
+- ✅ Choose between free and premium media providers
+- ✅ User-friendly web interface for non-technical users
 - ✅ Speed up page load times with async loader
 - ✅ Improve SEO with structured data
 - ✅ Automate performance testing
 - ✅ Catch regressions before deployment
 
 ### For Agencies
-- ✅ Rapid prototyping with auto-generated images
+- ✅ Rapid prototyping with auto-generated media from 3 providers
+- ✅ Professional premium content options (Envato)
+- ✅ Web-based tools for client self-service
 - ✅ Deliver high-performance client sites
 - ✅ Provide automated quality reports
 - ✅ Ensure accessibility compliance
 - ✅ Reduce manual testing time
 
 ### For Teams
-- ✅ Streamline content creation workflow
+- ✅ Streamline content creation workflow with web interface
+- ✅ Multiple media provider options for flexibility
+- ✅ No-code solution for media updates
 - ✅ Enforce performance standards
 - ✅ Track metrics over time
 - ✅ Prevent performance regressions
@@ -189,12 +213,18 @@ cd "JSON-LD Automation"/
 open DYNAMIC-JSONLD-GUIDE.md
 ```
 
-**For Auto Image Updates:**
+**For Auto Media Updates:**
 ```bash
-cd Auto-Image-Updater-Template/
+cd Auto-Media-Updater-Template/
 npm install
+
+# Option 1: Web Interface (Recommended)
+npm run server
+# Open http://localhost:3000 in browser
+
+# Option 2: Command Line
 # Setup .env file, then run:
-node update-menu-images.mjs
+node update-media.mjs --provider pixabay
 ```
 
 **For Performance Testing:**
@@ -238,9 +268,12 @@ Git-Uploads/
 │   ├── LICENSE
 │   └── dynamic-jsonld-module.js
 │
-├── Auto-Image-Updater-Template/
+├── Auto-Media-Updater-Template/
 │   ├── README.md
-│   ├── update-menu-images.mjs
+│   ├── media-providers.mjs
+│   ├── update-media.mjs
+│   ├── server.mjs
+│   ├── index.html
 │   ├── menu-data.js
 │   ├── package.json
 │   ├── .env.example
@@ -277,9 +310,10 @@ Git-Uploads/
 ### Workflow 1: New Website Development
 
 ```bash
-# 1. Populate content with images
-cd Auto-Image-Updater-Template/
-node update-menu-images.mjs
+# 1. Populate content with media (Web UI)
+cd Auto-Media-Updater-Template/
+npm run server
+# Use web interface to select provider and update media
 
 # 2. Use Async Loader for fast page loads
 Copy loader.js and bootstrap-loader.js to project
@@ -527,7 +561,10 @@ npm run lighthouse:manual
 - `Async-Boot-Loader-Template/loader.js` - Asset loader
 - `Async-Boot-Loader-Template/bootstrap-loader.js` - Bootstrap script
 - `JSON-LD Automation/dynamic-jsonld-module.js` - Schema generator
-- `Auto-Image-Updater-Template/update-menu-images.mjs` - Image updater script
+- `Auto-Media-Updater-Template/media-providers.mjs` - Multi-provider abstraction
+- `Auto-Media-Updater-Template/update-media.mjs` - Media updater script
+- `Auto-Media-Updater-Template/server.mjs` - Web server
+- `Auto-Media-Updater-Template/index.html` - Web interface
 - `Lighthouse-Automation/server.js` - Web server
 - `Lighthouse-Automation/.lighthouserc.json` - Lighthouse config
 - `Lighthouse-Automation/scripts/lighthouse-ci.sh` - Testing script
@@ -545,8 +582,8 @@ npm run lighthouse:manual
 
 ---
 
-**Version:** 1.0.0  
-**Last Updated:** November 4, 2025  
+**Version:** 1.0.4  
+**Last Updated:** November 14, 2025  
 **Repository:** [https://github.com/kbishopzz/Git-Uploads](https://github.com/kbishopzz/Git-Uploads)
 
 **Made with ❤️ by developers, for developers.**

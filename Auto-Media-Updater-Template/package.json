@@ -1,0 +1,40 @@
+{
+  "name": "auto-media-updater-template",
+  "version": "1.1.1",
+  "description": "Multi-provider media updater for data files - supports images, videos, and audio from Unsplash, Pixabay, and Envato Elements",
+  "main": "update-media.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node update-media.mjs",
+    "update": "node update-media.mjs",
+    "server": "node server.mjs",
+    "web": "node server.mjs",
+    "help": "node update-media.mjs --help"
+  },
+  "keywords": [
+    "unsplash",
+    "pixabay",
+    "envato",
+    "images",
+    "automation",
+    "menu",
+    "web-development",
+    "toolkit",
+    "multi-provider",
+    "stock-photos"
+  ],
+  "author": "Keith Bishop",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kbishopzz/Git-Uploads"
+  }
+}

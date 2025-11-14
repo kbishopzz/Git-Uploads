@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Media Updater - Web Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .provider-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .provider-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .provider-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .provider-card.selected {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .provider-card input[type="radio"] {
+            display: none;
+        }
+
+        .provider-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .provider-card p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .provider-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .help-text {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .help-text a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .help-text a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .results.show {
+            display: block;
+        }
+
+        .results h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .log-entry {
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .log-success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .log-error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .log-info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .log-warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 Auto Media Updater</h1>
+            <p>Update your data files with images, videos, and audio from multiple providers</p>
+            <p style="font-size: 0.85rem; margin-top: 10px;">Version 1.1.1</p>
+        </div>
+
+        <div class="content">
+            <form id="updateForm">
+                <!-- Provider Selection -->
+                <div class="form-group">
+                    <label>Select Image Provider:</label>
+                    <div class="provider-grid">
+                        <div class="provider-card selected" onclick="selectProvider('unsplash')">
+                            <input type="radio" name="provider" value="unsplash" id="provider-unsplash" checked>
+                            <div class="provider-icon">🌅</div>
+                            <h3>Unsplash</h3>
+                            <p>Free HD photos</p>
+                        </div>
+                        <div class="provider-card" onclick="selectProvider('pixabay')">
+                            <input type="radio" name="provider" value="pixabay" id="provider-pixabay">
+                            <div class="provider-icon">📸</div>
+                            <h3>Pixabay</h3>
+                            <p>Free stock media</p>
+                        </div>
+                        <div class="provider-card" onclick="selectProvider('envato')">
+                            <input type="radio" name="provider" value="envato" id="provider-envato">
+                            <div class="provider-icon">💎</div>
+                            <h3>Envato</h3>
+                            <p>Premium content</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Key Input -->
+                <div class="form-group">
+                    <label for="apiKey">API Key / Token:</label>
+                    <input type="password" id="apiKey" name="apiKey" placeholder="Enter your API key" required>
+                    <p class="help-text" id="apiKeyHelp">
+                        Get your Unsplash API key at <a href="https://unsplash.com/developers" target="_blank">unsplash.com/developers</a>
+                    </p>
+                </div>
+
+                <!-- Data File Selection -->
+                <div class="form-group">
+                    <label for="dataFile">Target Data File:</label>
+                    <select id="dataFile" name="dataFile">
+                        <option value="menu-data.js">menu-data.js</option>
+                    </select>
+                    <p class="help-text">The JavaScript file containing your data array</p>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submitBtn">
+                    <span id="btnText">🚀 Update Media</span>
+                </button>
+            </form>
+
+            <!-- Results Section -->
+            <div class="results" id="results">
+                <h3>📊 Update Results</h3>
+                <div id="logContainer"></div>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-value" id="successCount">0</div>
+                        <div class="stat-label">Success</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="failCount">0</div>
+                        <div class="stat-label">Failed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="totalCount">0</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const providerInfo = {
+            unsplash: {
+                name: 'Unsplash',
+                helpUrl: 'https://unsplash.com/developers',
+                helpText: 'Get your Unsplash API key at'
+            },
+            pixabay: {
+                name: 'Pixabay',
+                helpUrl: 'https://pixabay.com/api/docs/',
+                helpText: 'Get your Pixabay API key at'
+            },
+            envato: {
+                name: 'Envato Elements',
+                helpUrl: 'https://build.envato.com/api/',
+                helpText: 'Get your Envato OAuth token at'
+            }
+        };
+
+        function selectProvider(provider) {
+            // Update visual selection
+            document.querySelectorAll('.provider-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+            
+            // Update radio button
+            document.getElementById(`provider-${provider}`).checked = true;
+            
+            // Update help text
+            const info = providerInfo[provider];
+            document.getElementById('apiKeyHelp').innerHTML = 
+                `${info.helpText} <a href="${info.helpUrl}" target="_blank">${info.helpUrl}</a>`;
+        }
+
+        document.getElementById('updateForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const provider = formData.get('provider');
+            const apiKey = formData.get('apiKey');
+            const dataFile = formData.get('dataFile');
+            
+            // Show loading state
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            submitBtn.disabled = true;
+            btnText.innerHTML = '<span class="spinner"></span>Updating Images...';
+            
+            // Show results container
+            const results = document.getElementById('results');
+            results.classList.add('show');
+            
+            const logContainer = document.getElementById('logContainer');
+            logContainer.innerHTML = '';
+            
+            // Add initial log
+            addLog('info', `Starting update with ${providerInfo[provider].name}...`);
+            addLog('info', `Target file: ${dataFile}`);
+            
+            try {
+                // Make API request to backend
+                const response = await fetch('/api/update-images', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        provider,
+                        apiKey,
+                        dataFile
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Display logs
+                    data.logs.forEach(log => {
+                        addLog(log.type, log.message);
+                    });
+                    
+                    // Update stats
+                    document.getElementById('successCount').textContent = data.successCount;
+                    document.getElementById('failCount').textContent = data.failCount;
+                    document.getElementById('totalCount').textContent = data.totalCount;
+                    
+                    addLog('success', '✅ Update completed successfully!');
+                } else {
+                    addLog('error', `❌ Error: ${data.error}`);
+                }
+            } catch (error) {
+                addLog('error', `❌ Network error: ${error.message}`);
+                addLog('warning', '⚠️  Make sure the server is running: node server.mjs');
+            } finally {
+                // Reset button
+                submitBtn.disabled = false;
+                btnText.innerHTML = '🚀 Update Media';
+            }
+        });
+
+        function addLog(type, message) {
+            const logContainer = document.getElementById('logContainer');
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry log-${type}`;
+            logEntry.textContent = message;
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        // Load available data files on page load
+        async function loadDataFiles() {
+            try {
+                const response = await fetch('/api/list-files');
+                const data = await response.json();
+                
+                if (data.files && data.files.length > 0) {
+                    const select = document.getElementById('dataFile');
+                    select.innerHTML = '';
+                    data.files.forEach(file => {
+                        const option = document.createElement('option');
+                        option.value = file;
+                        option.textContent = file;
+                        select.appendChild(option);
+                    });
+                }
+            } catch (error) {
+                console.log('Could not load data files:', error);
+            }
+        }
+
+        // Load files when page loads
+        loadDataFiles();
+    </script>
+</body>
+</html>
