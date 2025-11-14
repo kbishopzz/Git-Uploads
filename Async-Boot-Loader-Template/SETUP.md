@@ -269,7 +269,7 @@ MIT License - Free for in-repo use. Copy and reuse in your other projects as nee
 
 ## 📚 Additional Resources
 
-- See [BOOTSTRAP_LOADER_README.md](BOOTSTRAP_LOADER_README.md) for quick usage
+- See [README.md](README.md) for quick usage
 - See [CHANGELOG.md](CHANGELOG.md) for version history
 - See [LICENSE](LICENSE) for full license text
 - See [index-template.html](index-template.html) for generic example

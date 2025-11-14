@@ -1,7 +1,12 @@
 # 🚀 Lighthouse Automation - Reusable CI/CD Component
 
-**Version:** 1.0.2  
-**Last Updated:** November 14, 2025 that can be deployed to any web project for automated performance, accessibility, and best practices testing.
+Complete CI/CD automation package for Google Lighthouse performance and accessibility testing that can be deployed to any web project.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.2-green.svg)]()
+[![Last Updated](https://img.shields.io/badge/updated-November%2014%2C%202025-orange.svg)]()
+
+---
 
 ## 📦 What's Included
 

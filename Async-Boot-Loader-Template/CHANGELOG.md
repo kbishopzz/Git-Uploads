@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fallback mechanisms for strict CSP environments
 - Preload link swapping for CSS optimization
 - Configuration-driven setup via `window.BOOTSTRAP_LOADER_CONFIG`
-- Comprehensive documentation (BOOTSTRAP_LOADER_README.md, LOADER_SETUP.md)
+- Comprehensive documentation (README.md, SETUP.md)
 - Example index.html with project-specific implementation
 - Generic index-template.html for reusable projects
 - MIT License
@@ -29,8 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Browser Support**: Modern browsers + graceful degradation
 
 ### Documentation
-- Quick usage guide in BOOTSTRAP_LOADER_README.md
-- Detailed setup instructions in LOADER_SETUP.md
+- Quick usage guide in README.md
+- Detailed setup instructions in SETUP.md
 - Integration examples and best practices
 - License information
 

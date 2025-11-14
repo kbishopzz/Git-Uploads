@@ -1,9 +1,10 @@
 # 📊 Dynamic JSON-LD Schema Generator
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.2-green.svg)]()
-
 A flexible, reusable JavaScript module for automatically generating and injecting JSON-LD structured data into websites. Perfect for improving SEO and enabling rich results in search engines.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.3-green.svg)]()
+[![Last Updated](https://img.shields.io/badge/updated-November%2014%2C%202025-orange.svg)]()
 
 ---
 
@@ -116,6 +117,7 @@ For comprehensive documentation, examples, and API reference, see:
 | Organization | Companies & nonprofits | [See Guide](DYNAMIC-JSONLD-GUIDE.md#organization) |
 | Article | Blog posts & news | [See Guide](DYNAMIC-JSONLD-GUIDE.md#article) |
 | Menu | Restaurant menus | [See Guide](DYNAMIC-JSONLD-GUIDE.md#menu) |
+| Review | Customer reviews & ratings | [See Guide](DYNAMIC-JSONLD-GUIDE.md#review) |
 
 ---
 

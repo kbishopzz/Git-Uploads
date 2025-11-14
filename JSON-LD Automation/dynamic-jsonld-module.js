@@ -411,6 +411,38 @@ const JSONLDSchemas = {
     description: config.description || "",
     hasMenuSection: config.sections || [],
   }),
+
+  /**
+   * Review schema
+   */
+  review: (config) => ({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": config.itemType || "LocalBusiness",
+      name: config.itemName || "Business Name",
+      image: config.itemImage || "",
+      url: config.itemUrl || window.location.origin,
+    },
+    author: {
+      "@type": "Person",
+      name: config.author || "Reviewer Name",
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: config.rating?.value || "5",
+      bestRating: config.rating?.best || "5",
+      worstRating: config.rating?.worst || "1",
+    },
+    reviewBody: config.body || "Review text goes here",
+    datePublished: config.published || new Date().toISOString(),
+    publisher: config.publisher
+      ? {
+          "@type": "Organization",
+          name: config.publisher,
+        }
+      : undefined,
+  }),
 };
 
 // Export for use

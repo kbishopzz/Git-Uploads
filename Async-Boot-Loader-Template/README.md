@@ -1,8 +1,12 @@
 # 🔄 Bootstrap Loader — Quick Usage Guide
 
-**Version:** 1.0.2  
-**Last Updated:** November 14, 2025  
-**License:** MIT
+A Promise-based async asset loading system for modern web applications.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.2-green.svg)]()
+[![Last Updated](https://img.shields.io/badge/updated-November%2014%2C%202025-orange.svg)]()
+
+---
 
 This repository includes two small files intended to be reusable across projects:
 
@@ -56,7 +60,7 @@ MIT License - Free for in-repo use. Copy freely into your other projects.
 
 ## 📚 Additional Resources
 
-- See [LOADER_SETUP.md](LOADER_SETUP.md) for detailed setup instructions
+- See [SETUP.md](SETUP.md) for detailed setup instructions
 - See [CHANGELOG.md](CHANGELOG.md) for version history
 - See [LICENSE](LICENSE) for full license text
 

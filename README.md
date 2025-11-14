@@ -3,7 +3,7 @@
 A comprehensive collection of production-ready tools for web performance optimization, SEO automation, and CI/CD integration. Perfect for developers, agencies, and teams looking to improve website quality and automate testing workflows.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.4-green.svg)]()
+[![Version](https://img.shields.io/badge/version-1.0.5-green.svg)]()
 [![Last Updated](https://img.shields.io/badge/updated-November%2014%2C%202025-orange.svg)]()
 
 ---
@@ -33,7 +33,7 @@ A high-performance, reusable JavaScript asset loading system for modern web appl
 ```bash
 cd Async-Boot-Loader-Template/
 # Copy loader.js and bootstrap-loader.js to your project
-# See BOOTSTRAP_LOADER_README.md for integration
+# See README.md for integration
 ```
 
 ---
@@ -204,7 +204,7 @@ cd Git-Uploads
 **For Async Loading:**
 ```bash
 cd Async-Boot-Loader-Template/
-open BOOTSTRAP_LOADER_README.md
+open README.md
 ```
 
 **For SEO/Structured Data:**
@@ -582,7 +582,7 @@ npm run lighthouse:manual
 
 ---
 
-**Version:** 1.0.4  
+**Version:** 1.0.5  
 **Last Updated:** November 14, 2025  
 **Repository:** [https://github.com/kbishopzz/Git-Uploads](https://github.com/kbishopzz/Git-Uploads)
 

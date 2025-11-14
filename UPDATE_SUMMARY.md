@@ -193,8 +193,8 @@ All requested improvements have been successfully implemented:
 25. `/update_summary.md` - This file
 
 ### Files Modified (20+)
-1. `Async-Boot-Loader-Template/BOOTSTRAP_LOADER_README.md`
-2. `Async-Boot-Loader-Template/LOADER_SETUP.md`
+1. `Async-Boot-Loader-Template/README.md`
+2. `Async-Boot-Loader-Template/SETUP.md`
 3. `JSON-LD Automation/README.md`
 4. `JSON-LD Automation/DYNAMIC-JSONLD-GUIDE.md`
 5. `Lighthouse-Automation/README.md`
@@ -401,7 +401,7 @@ This repository now demonstrates:
 
 ### Documentation Locations
 - **Root:** `/README.md`
-- **Async Loader:** `Async-Boot-Loader-Template/BOOTSTRAP_LOADER_README.md`
+- **Async Loader:** `Async-Boot-Loader-Template/README.md`
 - **JSON-LD:** `JSON-LD Automation/DYNAMIC-JSONLD-GUIDE.md`
 - **Auto Image Updater:** `Auto-Image-Updater-Template/README.md`
 - **Lighthouse:** `Lighthouse-Automation/docs/INSTALLATION.md`

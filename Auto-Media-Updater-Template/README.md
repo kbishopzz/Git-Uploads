@@ -1,10 +1,12 @@
-# Auto Media Updater Template
+# 🎬 Auto Media Updater Template
 
-🎬 **Multi-provider media updater for your data files!**
+Multi-provider media updater for your data files - supports images, videos, and audio from Unsplash, Pixabay, and Envato Elements.
 
-**Version:** 1.1.1  
-**Last Updated:** November 14, 2025  
-**License:** MIT
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.1.1-green.svg)]()
+[![Last Updated](https://img.shields.io/badge/updated-November%2014%2C%202025-orange.svg)]()
+
+---
 
 This tool helps web developers quickly populate their projects with high-quality images, videos, and audio from multiple media providers. It automatically fetches and updates media URLs in your data files based on item names.
 

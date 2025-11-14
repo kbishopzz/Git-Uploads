@@ -5,6 +5,24 @@ All notable changes to the JSON-LD Schema Automation project will be documented 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2025-11-14
+
+### Added
+- **Review Schema**: New pre-built schema for individual reviews
+- Support for reviewing businesses, products, or any item type
+- Configurable rating scale (best/worst rating values)
+- Author and publisher information for reviews
+- Date published tracking for review timestamps
+
+### Technical Details
+- Review schema follows Schema.org Review specification
+- Supports `itemReviewed` property for any Schema.org type
+- Includes structured `reviewRating` data for rich results
+- Compatible with Google Review rich snippets
+- Integrates with existing Product and LocalBusiness schemas
+
+---
+
 ## [1.0.0] - 2025-11-04
 
 ### Added
